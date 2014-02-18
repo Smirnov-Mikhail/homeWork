@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Task 1 (hw 6) merge sort", "Task 1 (hw 6) merge sort\Task 1 (hw 6) merge sort.vcxproj", "{161A416A-49F8-4F27-A6CC-50E3F6A3A99C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{161A416A-49F8-4F27-A6CC-50E3F6A3A99C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{161A416A-49F8-4F27-A6CC-50E3F6A3A99C}.Debug|Win32.Build.0 = Debug|Win32
+		{161A416A-49F8-4F27-A6CC-50E3F6A3A99C}.Release|Win32.ActiveCfg = Release|Win32
+		{161A416A-49F8-4F27-A6CC-50E3F6A3A99C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

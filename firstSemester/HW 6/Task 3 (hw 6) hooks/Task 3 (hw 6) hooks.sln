@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Task 3 (hw 6) hooks", "Task 3 (hw 6) hooks\Task 3 (hw 6) hooks.vcxproj", "{E7B7FCBC-F89B-4850-AAE2-D1FD2D330F9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7B7FCBC-F89B-4850-AAE2-D1FD2D330F9A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E7B7FCBC-F89B-4850-AAE2-D1FD2D330F9A}.Debug|Win32.Build.0 = Debug|Win32
+		{E7B7FCBC-F89B-4850-AAE2-D1FD2D330F9A}.Release|Win32.ActiveCfg = Release|Win32
+		{E7B7FCBC-F89B-4850-AAE2-D1FD2D330F9A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

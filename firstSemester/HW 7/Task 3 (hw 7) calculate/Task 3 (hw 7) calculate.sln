@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Task 3 (hw 7) calculate", "Task 3 (hw 7) calculate\Task 3 (hw 7) calculate.vcxproj", "{E07A6569-267E-4C40-AF73-3C82D2452F8E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E07A6569-267E-4C40-AF73-3C82D2452F8E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E07A6569-267E-4C40-AF73-3C82D2452F8E}.Debug|Win32.Build.0 = Debug|Win32
+		{E07A6569-267E-4C40-AF73-3C82D2452F8E}.Release|Win32.ActiveCfg = Release|Win32
+		{E07A6569-267E-4C40-AF73-3C82D2452F8E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
