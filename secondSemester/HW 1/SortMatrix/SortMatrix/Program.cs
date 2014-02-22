@@ -7,66 +7,66 @@ namespace Homework_1
         public static void Main()
         {
             Console.WriteLine("Enter the number:");
-            int N = Convert.ToInt32(Console.ReadLine());
+            int n = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Enter the another number:");
-            int M = Convert.ToInt32(Console.ReadLine());
+            int m = Convert.ToInt32(Console.ReadLine());
 
-            int[][] matrix = new int[N][];
-            for (int i = 0; i < N; i++)
-                matrix[i] = new int[M];
+            int[][] matrix = new int[n][];
+            for (int i = 0; i < n; i++)
+                matrix[i] = new int[m];
 
-            FillingMatrix(matrix, N, M); // заполняем матрицу
+            FillingMatrix(matrix, n, m); // заполняем матрицу
 
             Console.WriteLine("This matrix:");
-            OutputMatrix(matrix, N, M); // выводим
+            OutputMatrix(matrix, n, m); // выводим
             Console.WriteLine();
 
-            SortingMatrix(matrix, N, M); // сортируем
+            SortingMatrix(matrix, n, m); // сортируем
 
             Console.WriteLine("This sorted matrix:"); // выводим
-            OutputMatrix(matrix, N, M);
+            OutputMatrix(matrix, n, m);
         }
 
         // заполняем матрицу случайными числами
-        public static void FillingMatrix(int[][] matrix, int N, int M)
+        static void FillingMatrix(int[][] matrix, int n, int m)
         {
             Random rand = new Random();
-            for (int i = 0; i < N; i++)
-                for (int j = 0; j < M; j++)
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < m; j++)
                     matrix[i][j] = rand.Next(0, 10);
         }
 
         // выводим матрицу
-        public static void OutputMatrix(int[][] matrix, int N, int M)
+        static void OutputMatrix(int[][] matrix, int n, int m)
         {
             Random rand = new Random();
-            for (int i = 0; i < N; i++)
+            for (int i = 0; i < n; i++)
             {
-                for (int j = 0; j < M; j++)
+                for (int j = 0; j < m; j++)
                     Console.Write("{0} ", matrix[i][j]);
                 Console.WriteLine();
             }
         }
 
         // сортирует столбцы матрицы по первому элементу
-        public static void SortingMatrix(int[][] matrix, int N, int M)
+        static void SortingMatrix(int[][] matrix, int n, int m)
         {
-            for (int i = 0; i < M; i++)
+            for (int i = 0; i < m; i++)
             {
-                for (int j = i; j < M; j++)
+                for (int j = i; j < m; j++)
                 {
                     if (matrix[0][j] < matrix[0][i])
-                        ChangeColumns(matrix, N, i, j);
+                        ChangeColumns(matrix, n, i, j);
                 }
             }
         }
 
         // меняет два столбца местами
-        public static void ChangeColumns(int[][] matrix, int N, int i, int j)
+        static void ChangeColumns(int[][] matrix, int n, int i, int j)
         {
             int temp = 0;
-            for (int k = 0; k < N; k++)
+            for (int k = 0; k < n; k++)
             {
                 temp = matrix[k][i];
                 matrix[k][i] = matrix[k][j];

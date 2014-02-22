@@ -7,52 +7,51 @@ namespace Homework_1
         public static void Main()
         {
             Console.Write("Enter the number:");
-            int N = Convert.ToInt32(Console.ReadLine());
+            int n = Convert.ToInt32(Console.ReadLine());
 
-            int[][] matrix = new int[N][];
-            for (int i = 0; i < N; i++) 
-                matrix[i] = new int[N];
+            int[][] matrix = new int[n][];
+            for (int i = 0; i < n; i++) 
+                matrix[i] = new int[n];
 
-            FillingMatrix(matrix, N); // заполняем матрицу
+            FillingMatrix(matrix, n); // заполняем матрицу
 
-            OutputMatrix(matrix, N); // выводим
+            OutputMatrix(matrix, n); // выводим
 
-            OutputMatrixBySnail(matrix, N); // выводим по спирали
+            OutputMatrixBySnail(matrix, n); // выводим по спирали
         }
 
         // заполняем матрицу случайными числами
-        public static void FillingMatrix(int[][] matrix, int N)
+        static void FillingMatrix(int[][] matrix, int n)
         {
             Random rand = new Random();
-            for (int i = 0; i < N; i++)
-                for (int j = 0; j < N; j++)
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < n; j++)
                     matrix[i][j] = rand.Next(0, 10);
         }
 
         // выводим матрицу
-        public static void OutputMatrix(int[][] matrix, int N)
+        static void OutputMatrix(int[][] matrix, int n)
         {
-            Random rand = new Random();
-            for (int i = 0; i < N; i++)
+            for (int i = 0; i < n; i++)
             {
-                for (int j = 0; j < N; j++)
+                for (int j = 0; j < n; j++)
                     Console.Write("{0} ", matrix[i][j]);
                 Console.WriteLine();
             }
         }
 
         // выводим матрицу по спирали
-        public static void OutputMatrixBySnail(int[][] matrix, int N)
+        static void OutputMatrixBySnail(int[][] matrix, int n)
         {
             int step = 1; // количество элементов, на которые мы должны продвинуться
 
             // индексы матрицы
-            int i = N / 2;
-            int j = N / 2;
+            int i = n / 2;
+            int j = n / 2;
             Console.Write("{0} ", matrix[i][j]); // сразу выводим центральный
 
             int h = 0;
-            while(true)
+            while (true)
             {
                 // идём вверх
                 for (h = i - 1; h >= i - step; h--)
