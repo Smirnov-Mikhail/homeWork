@@ -6,122 +6,29 @@ namespace Homework_2
     {
         public static void Main()
         {
-            object a;
-            a = 1;
+            int a = 1;
+            int b = 5;
 
             Stack stack = new Stack();
 
+            // Verify that the program is working correctly
             stack.Push(a);
-            stack.Push("ror");
+            stack.Push(b);
 
             Console.WriteLine("{0}", stack.Top().Value);
 
             stack.Pop();
 
             Console.WriteLine("{0}", stack.Top().Value);
-        }
 
-        public class ListElement
-        {
-            private object data;
-            private ListElement next;
+            stack.Pop();
+            stack.Pop();
 
-            public object Value
-            {
-                get {
-                        if (this != null)
-                        {
-                            return data;
-                        }
+            Console.WriteLine("{0}", stack.Top().Value);
 
-                        return 0;
-                    }
+            stack.Push(a);
 
-                set {
-                        data = value; 
-                    }
-            }
-
-            public ListElement(object element)
-            {
-                this.data = element;
-            }
-
-            public ListElement Next
-            {
-                get { return this.next; }
-                set { this.next = value; }
-            }
-        }
-
-        public class Stack
-        {
-            private ListElement first;
-            private ListElement current;
-            private ListElement last;
-            private int size;
-
-            public Stack()
-            {
-                size = 0;
-                first = current = last = null;
-            }
-
-            public void Push(object value)
-            {
-                ListElement newElement = new ListElement(value);
-
-                newElement.Next = first;
-                first = newElement;
-
-                Count++;
-            }
-
-            public ListElement Top()
-            {
-                if (first == null)
-                {
-                    ListElement temp = new ListElement(null);
-                    return temp;
-                }
-                else
-                {
-                    ListElement temp = first;
-                    return temp;
-                }
-            }
-
-            public ListElement Pop()
-            {
-                if (first == null)
-                {
-                    ListElement temp = new ListElement(null);
-                    return temp;
-                }
-                else
-                {
-                    ListElement temp = first;
-                    first = first.Next;
-
-                    Count--;
-
-                    return temp;
-                }
-            }
-
-
-
-
-            public bool testForEmpty()
-            {
-                return size == 0;
-            }
-
-            public int Count //свойство для size
-            {
-                get { return size; }
-                set { size = value; }
-            }
+            Console.WriteLine("{0}", stack.Top().Value);
         }
     }
 }
