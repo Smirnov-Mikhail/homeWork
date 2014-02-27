@@ -1,0 +1,5 @@
+C:\Users\Admin\Desktop\Информатика\Второй семестр\HW 2\RealizeStack\RealizeStack\bin\Debug\RealizeStack.exe
+C:\Users\Admin\Desktop\Информатика\Второй семестр\HW 2\RealizeStack\RealizeStack\bin\Debug\RealizeStack.pdb
+C:\Users\Admin\Desktop\Информатика\Второй семестр\HW 2\RealizeStack\RealizeStack\obj\x86\Debug\RealizeStack.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\Информатика\Второй семестр\HW 2\RealizeStack\RealizeStack\obj\x86\Debug\RealizeStack.exe
+C:\Users\Admin\Desktop\Информатика\Второй семестр\HW 2\RealizeStack\RealizeStack\obj\x86\Debug\RealizeStack.pdb

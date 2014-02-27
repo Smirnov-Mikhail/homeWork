@@ -9,7 +9,10 @@
         first = null;
     }
 
-    // add element in start of stack
+    /// <summary>
+    /// Add element in start of stack.
+    /// </summary>
+    /// <param name="value"> Added element. </param>
     public void Push(object value)
     {
         StackElement newElement = new StackElement(value);
@@ -20,7 +23,10 @@
         Count++;
     }
 
-    // return first element
+    /// <summary>
+    /// Return first element
+    /// </summary>
+    /// <returns></returns>
     public StackElement Top()
     {
         if (first == null)
@@ -35,7 +41,10 @@
         }
     }
 
-    // delete first element and return its
+    /// <summary>
+    /// Delete first element and return its.
+    /// </summary>
+    /// <returns></returns>
     public StackElement Pop()
     {
         if (first == null)
@@ -54,12 +63,16 @@
         }
     }
 
-    // delete all elements in stack
+    /// <summary>
+    /// Delete all elements in stack.
+    /// </summary>
     public void ClearStack()
     {
         StackElement temp = first;
         while (temp != null)
             temp = temp.Next;
+
+        size = 0;
     }
 
     public bool TestForEmpty()
@@ -67,7 +80,9 @@
         return size == 0;
     }
 
-    //property for size
+    /// <summary>
+    /// Property for size.
+    /// </summary>
     public int Count 
     {
         get { return size; }
