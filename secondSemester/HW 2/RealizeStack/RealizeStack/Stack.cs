@@ -3,11 +3,7 @@
     private StackElement first;
     private int size;
 
-    public Stack()
-    {
-        size = 0;
-        first = null;
-    }
+    public Stack() { }
 
     /// <summary>
     /// Add element in start of stack.
@@ -27,17 +23,17 @@
     /// Return first element
     /// </summary>
     /// <returns></returns>
-    public StackElement Top()
+    public object Top()
     {
         if (first == null)
         {
             StackElement temp = new StackElement(null);
-            return temp;
+            return temp.Value;
         }
         else
         {
             StackElement temp = first;
-            return temp;
+            return temp.Value;
         }
     }
 
@@ -45,12 +41,12 @@
     /// Delete first element and return its.
     /// </summary>
     /// <returns></returns>
-    public StackElement Pop()
+    public object Pop()
     {
         if (first == null)
         {
             StackElement temp = new StackElement(null);
-            return temp;
+            return temp.Value;
         }
         else
         {
@@ -59,7 +55,7 @@
 
             Count--;
 
-            return temp;
+            return temp.Value;
         }
     }
 
@@ -68,13 +64,14 @@
     /// </summary>
     public void ClearStack()
     {
-        StackElement temp = first;
-        while (temp != null)
-            temp = temp.Next;
-
+        first = null;
         size = 0;
     }
 
+    /// <summary>
+    /// Test stack for empty. (if stack is empty then return true)
+    /// </summary>
+    /// <returns></returns>
     public bool TestForEmpty()
     {
         return size == 0;
@@ -83,9 +80,38 @@
     /// <summary>
     /// Property for size.
     /// </summary>
-    public int Count 
+    public int Count
     {
         get { return size; }
         set { size = value; }
+    }
+
+    /// <summary>
+    /// Element of the stack.
+    /// </summary>
+    private class StackElement
+    {
+        private object data;
+        private StackElement next;
+
+        public object Value
+        {
+            get { return data; }
+            set { data = value; }
+        }
+
+        public StackElement(object element)
+        {
+            this.data = element;
+        }
+
+        /// <summary>
+        /// Next element of the stack.
+        /// </summary>
+        public StackElement Next
+        {
+            get { return this.next; }
+            set { this.next = value; }
+        }
     }
 }

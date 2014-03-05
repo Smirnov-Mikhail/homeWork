@@ -7,11 +7,7 @@ public class List
     private ListElement last;
     private int size;
 
-    public List()
-    {
-        size = 0;
-        first = current = last = null;
-    }
+    public List() { }
 
     /// <summary>
     /// Add element in front of stack.
@@ -37,7 +33,8 @@ public class List
 
         if (first == null)
         {
-            first = last = newElement;
+            first = newElement;
+            last = newElement;
         }
         else
         {
@@ -52,15 +49,20 @@ public class List
     /// </summary>
     /// <param name="newElement"> Added element. </param>
     /// <param name="index"> Index of desired position. (if index does not satisfy then the method does nothing) </param>
-    public void Insert_Index(object value, int index)
+    public void InsertIndex(object value, int index)
     {
-        if (index < 1 || index > size)
+        if (index < 1 || index > size + 1)
         {
             return;
         }
         else if (index == 1) // if inserted to the front
         {
-            PushFront(value);
+            ListElement newElement = new ListElement(value);
+
+            newElement.Next = first;
+            first = newElement;
+
+            Count++;
         }
         else if (index == size) //if inserted to the back
         {
@@ -83,7 +85,7 @@ public class List
     }
 
     /// <summary>
-    /// Show on the display elements of list
+    /// Show on the display elements of list.
     /// </summary>
     public void OutPutList()
     {
@@ -93,11 +95,9 @@ public class List
             return;
         }
         current = first;
-        int count = 1;
         while (current != null)
         {
             Console.Write("{0} ", current.Value);
-            count++;
             current = current.Next;
         }
         Console.WriteLine();
@@ -108,30 +108,48 @@ public class List
     /// </summary>
     /// <param name="index"> Index returned element. </param>
     /// <returns></returns>
-    public ListElement ReturnValueOfElement(int index)
+    public object ReturnValueOfElement(int index)
     {
+        if (index < 1 || index > size + 1)
+        {
+            return null;
+        }
+
         if (first == null)
         {
             ListElement temp = new ListElement(null);
-            return temp;
+            return temp.Value;
         }
         else
         {
-            ListElement temp = first;
-            return temp;
+            current = first;
+            int count = 1;
+
+            while (current != null)
+            { 
+                if (count == index)
+                    return current.Value;
+                count++;
+                current = current.Next;   
+            }
+
+            return current.Value;
         }
     }
 
-    // delete all elements in List
+    /// <summary>
+    /// Delete all elements in list.
+    /// </summary>
     public void ClearList()
     {
-        ListElement temp = first;
-        while (temp != null)
-            temp = temp.Next;
-
+        first = null;
         size = 0;
     }
 
+    /// <summary>
+    /// Test list for empty. (if list is empty then return true)
+    /// </summary>
+    /// <returns></returns>
     public bool TestForEmpty()
     {
         return size == 0;
@@ -142,11 +160,33 @@ public class List
     /// </summary>
     public int Count
     {
-        get { 
-                return size; 
-            }
-        set { 
-                size = value; 
-            }
+        get { return size; }
+        set { size = value; }
+    }
+
+    private class ListElement
+    {
+        private object data;
+        private ListElement next;
+
+        public object Value
+        {
+            get { return data; }
+            set { data = value; }
+        }
+
+        public ListElement(object element)
+        {
+            this.data = element;
+        }
+
+        /// <summary>
+        /// Next element of the list.
+        /// </summary>
+        public ListElement Next
+        {
+            get { return this.next; }
+            set { this.next = value; }
+        }
     }
 }
