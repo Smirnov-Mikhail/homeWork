@@ -2,9 +2,10 @@
 {
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using ListNamespace;
 
     [TestClass]
-    public class StackTest
+    public class ListTest
     {
 
         [TestInitialize]

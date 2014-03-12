@@ -1,117 +1,111 @@
-﻿public class Stack
+﻿namespace StackNamespace
 {
-    private StackElement first;
-    private int size;
-
-    public Stack() { }
-
-    /// <summary>
-    /// Add element in start of stack.
-    /// </summary>
-    /// <param name="value"> Added element. </param>
-    public void Push(object value)
+    public class Stack
     {
-        StackElement newElement = new StackElement(value);
+        private StackElement first;
+        private int size;
 
-        newElement.Next = first;
-        first = newElement;
+        public Stack() { }
 
-        Count++;
-    }
-
-    /// <summary>
-    /// Return first element
-    /// </summary>
-    /// <returns></returns>
-    public object Top()
-    {
-        if (first == null)
+        /// <summary>
+        /// Add element in start of stack.
+        /// </summary>
+        /// <param name="value"> Added element. </param>
+        public void Push(object value)
         {
-            StackElement temp = new StackElement(null);
-            return temp.Value;
-        }
-        else
-        {
-            StackElement temp = first;
-            return temp.Value;
-        }
-    }
+            StackElement newElement = new StackElement(value);
 
-    /// <summary>
-    /// Delete first element and return its.
-    /// </summary>
-    /// <returns></returns>
-    public object Pop()
-    {
-        if (first == null)
-        {
-            StackElement temp = new StackElement(null);
-            return temp.Value;
-        }
-        else
-        {
-            StackElement temp = first;
-            first = first.Next;
+            newElement.Next = first;
+            first = newElement;
 
-            Count--;
-
-            return temp.Value;
-        }
-    }
-
-    /// <summary>
-    /// Delete all elements in stack.
-    /// </summary>
-    public void ClearStack()
-    {
-        first = null;
-        size = 0;
-    }
-
-    /// <summary>
-    /// Test stack for empty. (if stack is empty then return true)
-    /// </summary>
-    /// <returns></returns>
-    public bool TestForEmpty()
-    {
-        return size == 0;
-    }
-
-    /// <summary>
-    /// Property for size.
-    /// </summary>
-    public int Count
-    {
-        get { return size; }
-        set { size = value; }
-    }
-
-    /// <summary>
-    /// Element of the stack.
-    /// </summary>
-    private class StackElement
-    {
-        private object data;
-        private StackElement next;
-
-        public object Value
-        {
-            get { return data; }
-            set { data = value; }
-        }
-
-        public StackElement(object element)
-        {
-            this.data = element;
+            Count++;
         }
 
         /// <summary>
-        /// Next element of the stack.
+        /// Return first element.
         /// </summary>
-        public StackElement Next
+        /// <returns></returns>
+        public object Top()
         {
-            get { return this.next; }
-            set { this.next = value; }
+            if (first == null)
+                return null;
+            else
+                return first.Value;
+        }
+
+        /// <summary>
+        /// Delete first element and return its.
+        /// </summary>
+        /// <returns></returns>
+        public object Pop()
+        {
+            if (first == null)
+                return null;
+            else
+            {
+                StackElement temp = first;
+                first = first.Next;
+
+                Count--;
+
+                return temp.Value;
+            }
+        }
+
+        /// <summary>
+        /// Delete all elements in stack.
+        /// </summary>
+        public void ClearStack()
+        {
+            first = null;
+            size = 0;
+        }
+
+        /// <summary>
+        /// Test stack for empty. (if stack is empty then return true)
+        /// </summary>
+        /// <returns></returns>
+        public bool TestForEmpty()
+        {
+            return size == 0;
+        }
+
+        /// <summary>
+        /// Property for size.
+        /// </summary>
+        public int Count
+        {
+            get { return size; }
+            set { size = value; }
+        }
+
+        /// <summary>
+        /// Element of the stack.
+        /// </summary>
+        private class StackElement
+        {
+            private object data;
+            private StackElement next;
+
+            public object Value
+            {
+                get { return data; }
+                set { data = value; }
+            }
+
+            public StackElement(object element)
+            {
+                this.data = element;
+            }
+
+            /// <summary>
+            /// Next element of the stack.
+            /// </summary>
+            public StackElement Next
+            {
+                get { return this.next; }
+                set { this.next = value; }
+            }
         }
     }
 }
