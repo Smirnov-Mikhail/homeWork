@@ -34,14 +34,14 @@
         [TestMethod]
         public void InsertIndexTest1()
         {
-            list.InsertIndex(1, 0);
+            list.InsertIndex(1, -1);
             Assert.IsTrue(list.TestForEmpty());
         }
 
         [TestMethod]
         public void InsertIndexTest2()
         {
-            list.InsertIndex(1, 1);
+            list.InsertIndex(1, 0);
             Assert.IsFalse(list.TestForEmpty());
         }
         
@@ -49,7 +49,7 @@
         public void ReturnValueOfElementTest()
         {
             list.PushFront(1);
-            Assert.AreEqual(list.ReturnValueOfElement(1), 1);
+            Assert.AreEqual(list.ReturnValueOfElement(0), 1);
         }
 
         [TestMethod]

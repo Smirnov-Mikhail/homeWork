@@ -24,9 +24,9 @@
         {
             string line = "96+12-*";
 
-            calc = new StackCalculator(line);
+            calc = new StackCalculator(stackPoint);
 
-            Assert.AreEqual(-15, calc.ResultByPostfixForm(stackPoint));
+            Assert.AreEqual(-15, calc.ResultByPostfixForm(line));
         }
 
         /// <summary>
@@ -37,9 +37,9 @@
         {
             string line = "23+4*56*-";
 
-            calc = new StackCalculator(line);
+            calc = new StackCalculator(stackArray);
 
-            Assert.AreEqual(-10, calc.ResultByPostfixForm(stackArray));
+            Assert.AreEqual(-10, calc.ResultByPostfixForm(line));
         }
         
 

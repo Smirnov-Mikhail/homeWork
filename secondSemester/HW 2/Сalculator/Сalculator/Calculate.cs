@@ -5,11 +5,11 @@
 
     public class StackCalculator
     {
-        private string str;
+        private IStack stack;
 
-        public StackCalculator(string line)
+        public StackCalculator(IStack mainStack)
         {
-            str = line;
+            stack = mainStack;
         }
 
         /// <summary>
@@ -17,7 +17,7 @@
         /// </summary>
         /// <param name="stack"> </param>
         /// <returns></returns>
-        public int ResultByPostfixForm(IStack stack)
+        public int ResultByPostfixForm(String str)
         {
 	        int temp = 0;
             int po = 0;
@@ -56,13 +56,13 @@
             switch (operation)
             {
                 case '+':
-                    return a1 += a2;
+                    return a1 + a2;
                 case '-':
-                    return a1 -= a2;
+                    return a1 - a2;
                 case '*':
-                    return a1 *= a2;
+                    return a1 * a2;
                 case '/':
-                    return a1 /= a2;
+                    return a1 / a2;
             }
 
             return 1;

@@ -24,6 +24,24 @@
         }
 
         [TestMethod]
+        public void FindElementInHashTest()
+        {
+            string str = "cat";
+
+            hash.InsertToHash(str);
+            Assert.IsTrue(hash.FindElementInHash(str));
+        }
+        
+        [TestMethod]
+        public void DeleteElementInHashTest()
+        {
+            string str = "cat";
+
+            hash.DeleteElementInHash(str);
+            Assert.IsTrue(hash.HashTestForEmpty());
+        }
+        
+        [TestMethod]
         public void ClearHashTest()
         {
             string str = "cat";

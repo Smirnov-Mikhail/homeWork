@@ -34,14 +34,14 @@
         [TestMethod]
         public void InsertIndexTest1()
         {
-            list.InsertIndex(1, 0);
+            list.InsertIndex(1, -1);
             Assert.IsTrue(list.TestForEmpty());
         }
 
         [TestMethod]
         public void InsertIndexTest2()
         {
-            list.InsertIndex(1, 1);
+            list.InsertIndex(1, 0);
             Assert.IsFalse(list.TestForEmpty());
         }
         
@@ -49,7 +49,7 @@
         public void ReturnValueOfElementTest()
         {
             list.PushFront(1);
-            Assert.AreEqual(list.ReturnValueOfElement(1), 1);
+            Assert.AreEqual(list.ReturnValueOfElement(0), 1);
         }
 
         [TestMethod]
@@ -62,6 +62,36 @@
             list.InsertIndex(0, 2);
 
             Assert.AreEqual(list.ReturnValueOfElement(2), 0);
+        }
+
+        [TestMethod]
+        public void FindElementInListTest()
+        {
+            list.PushFront("1");
+            list.PushFront("2");
+            list.PushFront("3");
+
+            Assert.IsTrue(list.FindElementInList("2"));
+        }
+        
+        [TestMethod]
+        public void ReturnIndexOfElementTest()
+        {
+            list.PushFront("1");
+            list.PushFront("2");
+            list.PushFront("3");
+
+            Assert.AreEqual(list.ReturnIndexOfElement("3"), 0);
+        }
+        
+        [TestMethod]
+        public void DeleteElementInListTest()
+        {
+            list.PushFront(1);
+
+            list.DeleteElementInList(0);
+
+            Assert.IsTrue(list.TestForEmpty());
         }
 
         [TestMethod]
@@ -92,7 +122,7 @@
             list.InsertValueInHash("kitty");
             list.InsertValueInHash("kitty");
 
-            Assert.AreEqual(list.ReturnFrequencyOfElement(1), 2);
+            Assert.AreEqual(list.ReturnFrequencyOfElement(0), 2);
         }
 
         private List list;

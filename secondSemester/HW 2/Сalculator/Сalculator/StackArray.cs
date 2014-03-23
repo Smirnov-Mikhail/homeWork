@@ -1,5 +1,6 @@
 ﻿namespace StackArrayNamespace
 {
+    using System;
     using IStacknamespace;
 
     public class StackArray : IStack
@@ -15,6 +16,9 @@
         /// <param name="value"> Added element. </param>
         public void Push(object value)
         {
+            if (size == 100)
+                throw new Exception();
+
             array[size] = value;
 
             Count++;

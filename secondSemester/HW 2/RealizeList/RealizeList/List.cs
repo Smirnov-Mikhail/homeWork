@@ -9,10 +9,8 @@
         private ListElement last;
         private int size;
 
-        public List() { }
-
         /// <summary>
-        /// Add element in front of stack.
+        /// Add element in front of list.
         /// </summary>
         /// <param name="value"> Added element. </param>
         public void PushFront(object value)
@@ -26,7 +24,7 @@
         }
 
         /// <summary>
-        /// Add element in back of stack.
+        /// Add element in back of list.
         /// </summary>
         /// <param name="value"> Added element. </param>
         public void PushBack(object value)
@@ -47,17 +45,17 @@
         }
 
         /// <summary>
-        /// Add element to the desired position of stack.
+        /// Add element to the desired position of list.
         /// </summary>
         /// <param name="newElement"> Added element. </param>
         /// <param name="index"> Index of desired position. (if index does not satisfy then the method does nothing) </param>
         public void InsertIndex(object value, int index)
         {
-            if (index < 1 || index > size + 1)
+            if (index < 0 || index > size)
             {
                 return;
             }
-            else if (index == 1) // if inserted to the front
+            else if (index == 0) // if inserted to the front
             {
                 ListElement newElement = new ListElement(value);
 
@@ -72,7 +70,7 @@
             }
             else
             {
-                int count = 1;
+                int count = 0;
                 current = first;
                 while (current != null && count != index - 1)
                 {
@@ -112,14 +110,14 @@
         /// <returns></returns>
         public object ReturnValueOfElement(int index)
         {
-            if (index < 1 || index > size + 1 || first == null)
+            if (index < 0 || index > size || first == null)
             {
                 return null;
             }
             else
             {
                 current = first;
-                int count = 1;
+                int count = 0;
 
                 while (current != null)
                 {
@@ -162,18 +160,13 @@
 
         private class ListElement
         {
-            private object data;
             private ListElement next;
 
-            public object Value
-            {
-                get { return data; }
-                set { data = value; }
-            }
+            public object Value { get; set; }
 
             public ListElement(object element)
             {
-                this.data = element;
+                this.Value = element;
             }
 
             /// <summary>

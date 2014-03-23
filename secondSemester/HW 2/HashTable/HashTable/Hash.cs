@@ -6,20 +6,17 @@
     public class HashTable
     {
         private List[] array;
-        private int size;
 
         public HashTable(int value)
         {
-            size = value;
-            array = new List[size];
-            for (int i = 0; i < size; i++)
+            array = new List[value];
+            for (int i = 0; i < array.Length; i++)
                 array[i] = new List();
         }
 
         /// <summary>
         /// Add element in the hash table.
         /// </summary>
-        /// <param name="array"> This list. </param>
         /// <param name="str"> Added element. </param>
         public void InsertToHash(string str)
         {
@@ -31,7 +28,7 @@
         /// </summary>
         public void OutputHash()
         {
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 array[i].OutputList();
                 Console.WriteLine();
@@ -44,19 +41,41 @@
         /// <returns></returns>
         public bool HashTestForEmpty()
         {
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < array.Length; i++)
                 if (!array[i].TestForEmpty())
                     return false;
             return true;
         }
-
+        
+        /// <summary>
+        /// Delete element in the hash-table.
+        /// </summary>
+        /// <param name="str"> Deleted element. </param>
+        public void DeleteElementInHash(string str)
+        {
+            array[HashFunction(str)].DeleteElementInList(array[HashFunction(str)].ReturnIndexOfElement(str));
+        }
+        
         /// <summary>
         /// Delete all elements of hash table.
         /// </summary>
         public void ClearHash()
         {
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < array.Length; i++)
                 array[i].ClearList();
+        }
+
+        /// <summary>
+        /// Find element in the hash.
+        /// </summary>
+        /// <param name="str"> Found element. </param>
+        /// <returns></returns>
+        public bool FindElementInHash(string str)
+        {
+            if (array[HashFunction(str)].FindElementInList(str))
+                return true;
+
+            return false;
         }
 
         /// <summary>
@@ -72,7 +91,7 @@
 
             if (index < 0)
                 index = -index;
-            index %= size;
+            index %= array.Length;
 
             return index;
         }
