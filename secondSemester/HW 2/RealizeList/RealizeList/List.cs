@@ -6,8 +6,6 @@
     {
         private ListElement first;
         private ListElement current;
-        private ListElement last;
-        private int size;
 
         /// <summary>
         /// Add element in front of list.
@@ -34,13 +32,20 @@
             if (first == null)
             {
                 first = newElement;
-                last = newElement;
             }
             else
             {
-                last.Next = newElement;
-                last = newElement;
+                current = first;
+
+                while (current.Next != null)
+                {
+                    current = current.Next;
+                }
+
+                current.Next = newElement;
+                current.Next.Next = null;
             }
+
             Count++;
         }
 
@@ -51,7 +56,7 @@
         /// <param name="index"> Index of desired position. (if index does not satisfy then the method does nothing) </param>
         public void InsertIndex(object value, int index)
         {
-            if (index < 0 || index > size)
+            if (index < 0 || index > Count)
             {
                 return;
             }
@@ -64,7 +69,7 @@
 
                 Count++;
             }
-            else if (index == size) //if inserted to the back
+            else if (index == Count) //if inserted to the back
             {
                 PushBack(value);
             }
@@ -110,7 +115,7 @@
         /// <returns></returns>
         public object ReturnValueOfElement(int index)
         {
-            if (index < 0 || index > size || first == null)
+            if (index < 0 || index > Count || first == null)
             {
                 return null;
             }
@@ -137,7 +142,7 @@
         public void ClearList()
         {
             first = null;
-            size = 0;
+            Count = 0;
         }
 
         /// <summary>
@@ -146,17 +151,13 @@
         /// <returns></returns>
         public bool TestForEmpty()
         {
-            return size == 0;
+            return Count == 0;
         }
 
         /// <summary>
         /// Property for size.
         /// </summary>
-        public int Count
-        {
-            get { return size; }
-            set { size = value; }
-        }
+        public int Count { get; set; }
 
         private class ListElement
         {
@@ -172,11 +173,7 @@
             /// <summary>
             /// Next element of the list.
             /// </summary>
-            public ListElement Next
-            {
-                get { return this.next; }
-                set { this.next = value; }
-            }
+            public ListElement Next { get; set; }
         }
     }
 }

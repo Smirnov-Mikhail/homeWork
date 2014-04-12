@@ -7,7 +7,6 @@
     [TestClass]
     public class ListTest
     {
-
         [TestInitialize]
         public void Initialize()
         {
@@ -29,7 +28,7 @@
         }
         
         /// <summary>
-        /// Insert to non-existent position. (indexs from 1 to size)
+        /// Insert to non-existent position. (indexs from 1 to size).
         /// </summary>
         [TestMethod]
         public void InsertIndexTest1()
@@ -74,6 +73,14 @@
             list.ClearList();
 
             Assert.IsTrue(list.TestForEmpty());
+        }
+
+        [TestMethod]
+        public void InsertIndexTestTryingToAddAfterFirst()
+        {
+            list.PushFront(1);
+            list.InsertIndex(2, 1);
+            Assert.AreEqual(2, list.ReturnValueOfElement(1));
         }
 
         private List list;

@@ -1,7 +1,8 @@
-﻿using System;
-
-namespace RealizeList
+﻿namespace RealizeList
 {
+    using System;
+    using ListNamespace;
+
     class Program
     {
         static void Main()
