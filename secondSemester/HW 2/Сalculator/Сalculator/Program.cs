@@ -1,9 +1,7 @@
-﻿using System;
-using StackCalculatornamespace;
-using StackPointNamespace;
-
-namespace Homewrok_2
+﻿namespace StackCalculator
 {
+    using System;
+
     class Program
     {
         static void Main()

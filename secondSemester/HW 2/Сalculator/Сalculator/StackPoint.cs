@@ -1,6 +1,5 @@
-﻿namespace StackPointNamespace
+﻿namespace StackCalculator
 {
-    using IStacknamespace;
 
     public class StackPoint : IStack
     {

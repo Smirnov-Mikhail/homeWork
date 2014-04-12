@@ -1,7 +1,6 @@
-﻿namespace StackArrayNamespace
+﻿namespace StackCalculator
 {
     using System;
-    using IStacknamespace;
 
     public class StackArray : IStack
     {

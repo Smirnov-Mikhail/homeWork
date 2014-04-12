@@ -1,15 +1,14 @@
-﻿namespace StackCalculatornamespace
+﻿namespace StackCalculator
 {
     using System;
-    using IStacknamespace;
 
     public class StackCalculator
     {
         private IStack stack;
 
-        public StackCalculator(IStack mainStack)
+        public StackCalculator(IStack stack)
         {
-            stack = mainStack;
+            this.stack = stack;
         }
 
         /// <summary>
