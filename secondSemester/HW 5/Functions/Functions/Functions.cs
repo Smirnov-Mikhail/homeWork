@@ -3,6 +3,10 @@
     using System;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// Class of functions that return a modified list.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class Functions<T>
     {
         /// <summary>
@@ -21,6 +25,12 @@
             return result;
         }
 
+        /// <summary>
+        /// Removing items of list that do not fit on the condition.
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="function"></param>
+        /// <returns></returns>
         public static List<T> Filter(List<T> list, Func<T, bool> function)
         {
             List<T> result = new List<T>();
@@ -34,6 +44,13 @@
             return result;
         }
 
+        /// <summary>
+        /// Returns the resulting value of the function.
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="firstElement"></param>
+        /// <param name="function"></param>
+        /// <returns></returns>
         public static int Fold(List<T> list, int firstElement, Func<int, T, int> function)
         {
             int result = firstElement;
