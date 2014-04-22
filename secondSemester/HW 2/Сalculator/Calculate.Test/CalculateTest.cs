@@ -2,9 +2,7 @@
 {
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using StackArrayNamespace;
-    using StackPointNamespace;
-    using StackCalculatornamespace;
+    using StackCalculator;
 
     [TestClass]
     public class StackArrayTest

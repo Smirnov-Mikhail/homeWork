@@ -1,6 +1,5 @@
 ﻿namespace StackCalculator
 {
-
     public class StackPoint : IStack
     {
         private StackElement first;

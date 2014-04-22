@@ -2,7 +2,7 @@
 {
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using StackPointNamespace;
+    using StackCalculator;
 
     [TestClass]
     public class StackPointTest
