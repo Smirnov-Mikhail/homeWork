@@ -11,7 +11,10 @@
         [TestInitialize]
         public void Initialize()
         {
-            hash = new HashTable(10);
+            hashFunction1 = new HashFunction1();
+            hash = new HashTable(10, hashFunction1);
+
+            hashFunction2 = new HashFunction2();
         }
 
         [TestMethod]
@@ -68,11 +71,13 @@
             hash.InsertToHash(str1);
             hash.InsertToHash(str2);
 
-            hash.ChangeHashFunction(1);
+            hash.ChangeHashFunction(hashFunction2);
 
             Assert.IsTrue(hash.FindElementInHash(str1) && hash.FindElementInHash(str2));
         }
 
         private HashTable hash;
+        HashFunction1 hashFunction1;
+        HashFunction2 hashFunction2;
     }
 }

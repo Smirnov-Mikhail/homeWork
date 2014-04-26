@@ -6,13 +6,15 @@
     public class HashTable
     {
         private List[] array;
-        private int choiceHashFunction;
+        private IHashFunction hashFunction;
 
-        public HashTable(int value)
+        public HashTable(int value, IHashFunction hashFunction)
         {
             array = new List[value];
             for (int i = 0; i < array.Length; i++)
                 array[i] = new List();
+
+            this.hashFunction = hashFunction;
         }
 
         /// <summary>
@@ -21,7 +23,7 @@
         /// <param name="str"> Added element. </param>
         public void InsertToHash(string str)
         {
-            array[HashFunction(str)].InsertValueInHash(str);
+            array[hashFunction.HashFunction(str, array.Length)].InsertValueInHash(str);
         }
 
         /// <summary>
@@ -42,7 +44,7 @@
         /// <param name="str"> Deleted element. </param>
         public void DeleteElementInHash(string str)
         {
-            array[HashFunction(str)].DeleteElementInList(array[HashFunction(str)].ReturnIndexOfElement(str));
+            array[hashFunction.HashFunction(str, array.Length)].DeleteElementInList(array[hashFunction.HashFunction(str, array.Length)].ReturnIndexOfElement(str));
         }
         
         /// <summary>
@@ -61,7 +63,7 @@
         /// <returns></returns>
         public bool FindElementInHash(string str)
         {
-            if (array[HashFunction(str)].FindElementInList(str))
+            if (array[hashFunction.HashFunction(str, array.Length)].FindElementInList(str))
                 return true;
 
             return false;
@@ -71,26 +73,26 @@
         /// Changed hash function and and moved all elements.
         /// </summary>
         /// <param name="choice"> Hash function. </param>
-        public void ChangeHashFunction(int choice)
+        public void ChangeHashFunction(IHashFunction otherHashFunction)
         {
-            int lastHashFunction = choiceHashFunction;
+            IHashFunction lastHashFunction = this.hashFunction;
             for (int i = 0; i < array.Length; i++)
             {
                 for (int j = 0; j < array[i].SizeOfList();)
                 {
-                    choiceHashFunction = choice;
+                    this.hashFunction = otherHashFunction;
                     // If the item is at the desired position.
-                    if (HashFunction((string)array[i].ReturnValueOfElement(j)) == i)
+                    if (hashFunction.HashFunction((string)array[i].ReturnValueOfElement(j), array.Length) == i)
                     {
                         j++;
                         continue;
                     }
 
                     object temp = array[i].ReturnValueOfElement(j);
-                    choiceHashFunction = lastHashFunction;
+                    this.hashFunction = lastHashFunction;
                     DeleteElementInHash((string)temp);
 
-                    choiceHashFunction = choice;
+                    this.hashFunction = otherHashFunction;
                     InsertToHash((string)temp);
                 }
             }
@@ -108,33 +110,5 @@
 
             return true;
         }
-
-        /// <summary>
-        /// Hash function.
-        /// </summary>
-        /// <param name="str"> This string. </param>
-        /// <returns></returns>
-        private int HashFunction(string str)
-        {
-            switch(choiceHashFunction)
-            {
-                case 0:
-                    {
-                        int index = 0;
-                        for (int i = 1; i < str.Length; i++)
-                            index += (int)Math.Pow(3.0, (str.Length - i)) * Convert.ToInt32(str[i]);
-
-                        if (index < 0)
-                            index = -index;
-
-                        return index % array.Length;
-                    }
-                default:
-                    {
-                        return (str.Length * 1234) % array.Length;
-                    }
-            }
-        }
-
     }
 }
