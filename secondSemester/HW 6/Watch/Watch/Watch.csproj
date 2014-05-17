@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F667498F-5183-4FD5-8106-AA5578D85211}</ProjectGuid>
+    <ProjectGuid>{0C6965C2-9221-4019-A90A-F3F5B1C57468}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Watch</RootNamespace>
@@ -44,16 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="WatchForm.cs">
+    <Compile Include="Watch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WatchForm.Designer.cs">
-      <DependentUpon>WatchForm.cs</DependentUpon>
+    <Compile Include="Watch.Designer.cs">
+      <DependentUpon>Watch.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="WatchForm.resx">
-      <DependentUpon>WatchForm.cs</DependentUpon>
+    <EmbeddedResource Include="Watch.resx">
+      <DependentUpon>Watch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

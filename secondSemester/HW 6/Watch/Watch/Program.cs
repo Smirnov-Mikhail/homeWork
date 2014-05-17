@@ -16,7 +16,7 @@ namespace Watch
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WatchForm());
+            Application.Run(new Watch());
         }
     }
 }
