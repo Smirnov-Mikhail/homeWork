@@ -12,10 +12,6 @@
             int matrixSize = 3;
             bool[,] adjacencyMatrix = new bool[matrixSize, matrixSize];
 
-            for (int i = 0; i < matrixSize; ++i)
-                for (int j = 0; j < matrixSize; ++j)
-                    adjacencyMatrix[i, j] = false;
-
             adjacencyMatrix[0, 1] = true;
             adjacencyMatrix[0, 2] = true;
 
@@ -37,10 +33,6 @@
         {
             int matrixSize = 3;
             bool[,] adjacencyMatrix = new bool[matrixSize, matrixSize];
-
-            for (int i = 0; i < matrixSize; ++i)
-                for (int j = 0; j < matrixSize; ++j)
-                    adjacencyMatrix[i, j] = false;
 
             adjacencyMatrix[0, 1] = true;
             adjacencyMatrix[0, 2] = true;
@@ -64,12 +56,6 @@
         {
             int matrixSize = 6;
             bool[,] adjacencyMatrix = new bool[matrixSize, matrixSize];
-
-            for (int i = 0; i < matrixSize; ++i)
-                for (int j = 0; j < matrixSize; ++j)
-                {
-                    adjacencyMatrix[i, j] = false;
-                }
 
             adjacencyMatrix[0, 0] = true;
             adjacencyMatrix[0, 1] = true;
