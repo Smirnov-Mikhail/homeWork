@@ -22,7 +22,7 @@
         /// <returns></returns>
         public bool AllRobotsCanBeDestroyed(bool[,] adjacencyMatrix, int[] robotsPosition, int matrixSize)
         {
-            arrayOfVertex = new bool[matrixSize];
+            bool[] arrayOfVertex = new bool[matrixSize];
 
             bool[] arrayCriticalVertexs = new bool[matrixSize];
 
@@ -31,8 +31,8 @@
                     for (int u = 0; u < robotsPosition.Length; ++u)
                         if (u != j)
                         {
-                            if (PathToVertex(adjacencyMatrix, robotsPosition[j], i, matrixSize)
-                                && PathToVertex(adjacencyMatrix, robotsPosition[u], i, matrixSize))
+                            if (PathToVertex(adjacencyMatrix, robotsPosition[j], i, matrixSize, arrayOfVertex)
+                                && PathToVertex(adjacencyMatrix, robotsPosition[u], i, matrixSize, arrayOfVertex))
                             {
                                 arrayCriticalVertexs[i] = true;
                                 j = robotsPosition.Length;
@@ -45,7 +45,7 @@
                 for (int j = 0; j < arrayCriticalVertexs.Length; ++j)
                 {
                     if (arrayCriticalVertexs[j])
-                        if (PathToVertex(adjacencyMatrix, robotsPosition[i], j, matrixSize))
+                        if (PathToVertex(adjacencyMatrix, robotsPosition[i], j, matrixSize, arrayOfVertex))
                             break;
 
                     if (j == arrayCriticalVertexs.Length - 1)
@@ -64,14 +64,13 @@
         /// <param name="b"> Second vertex. </param>
         /// <param name="matrixSize"></param>
         /// <returns></returns>
-        private bool PathToVertex(bool[,] adjacencyMatrix, int a, int b, int matrixSize)
+        private bool PathToVertex(bool[,] adjacencyMatrix, int a, int b, int matrixSize, bool[] arrayOfVertex)
         {
-            Console.WriteLine(a);
-            this.arrayOfVertex[a] = true;
+            arrayOfVertex[a] = true;
 
             for (int i = 0; i < arrayOfVertex.Length; ++i)
             {
-                if (this.arrayOfVertex.All(x => x == true))
+                if (arrayOfVertex.All(x => x == true))
                     return false;
             }
 
@@ -88,7 +87,7 @@
                     {
                         if (adjacencyMatrix[i, j] && !arrayOfVertex[j])
                         {
-                            if (PathToVertex(adjacencyMatrix, j, b, matrixSize))
+                            if (PathToVertex(adjacencyMatrix, j, b, matrixSize, arrayOfVertex))
                             {
                                 ZeroingArray(arrayOfVertex);
                                 return true;
@@ -111,7 +110,5 @@
             for (int k = 0; k < array.Length; ++k)
                 array[k] = false;
         }
-
-        private bool[] arrayOfVertex;
     }
 }
