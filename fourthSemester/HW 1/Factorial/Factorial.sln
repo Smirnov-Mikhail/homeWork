@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Factorial", "Factorial\Factorial.fsproj", "{D6EC5B2E-5110-44E1-8F9F-F13C8F709BF8}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Factorial", "Factorial\Factorial.fsproj", "{55AE01DA-BA51-4173-8A69-C0FFB46D4F14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D6EC5B2E-5110-44E1-8F9F-F13C8F709BF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D6EC5B2E-5110-44E1-8F9F-F13C8F709BF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D6EC5B2E-5110-44E1-8F9F-F13C8F709BF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D6EC5B2E-5110-44E1-8F9F-F13C8F709BF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55AE01DA-BA51-4173-8A69-C0FFB46D4F14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55AE01DA-BA51-4173-8A69-C0FFB46D4F14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55AE01DA-BA51-4173-8A69-C0FFB46D4F14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55AE01DA-BA51-4173-8A69-C0FFB46D4F14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
