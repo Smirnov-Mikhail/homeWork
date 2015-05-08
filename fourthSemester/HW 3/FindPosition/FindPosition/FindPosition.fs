@@ -1,4 +1,4 @@
-﻿let FindPosition list =
+﻿let findPosition list =
     let rec recFindPosition list max iter =       
         match list with
         | head :: tail when (list.Length < 3) -> Some(iter)
@@ -10,4 +10,4 @@
         | [] -> None
     recFindPosition list 0 0
 
-printf "%A" (FindPosition [ 1; 5; 6; 2 ])
+printf "%A" (findPosition [ 1; 5; 6; 2 ])

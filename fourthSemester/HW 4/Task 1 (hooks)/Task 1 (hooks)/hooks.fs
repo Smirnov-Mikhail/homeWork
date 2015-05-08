@@ -8,10 +8,7 @@ let test (str: string) =
             recTest (List.tail stack) str.[1..str.Length - 1]
         else if (str.Length <> 0) then
             recTest (str.[0]::stack) str.[1..str.Length - 1]    
-        else if ((List.length stack) = 0) then
-            true
-        else
-            false           
+        else (List.length stack) = 0          
     recTest stack str
             
 printfn "%A" (test "(({}[]){})")
