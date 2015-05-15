@@ -3,14 +3,14 @@
 
 let test (str: string) = 
     let stack = []
-    let rec recTest stack (str: string) =
-        if (List.length stack <> 0 && String.length str <> 0 && oppositeClose (List.head stack) str.[0]) then
-            recTest (List.tail stack) str.[1..str.Length - 1]
-        else if (str.Length <> 0) then
-            recTest (str.[0]::stack) str.[1..str.Length - 1]    
+    let rec recTest stack (str: string) index =
+        if (List.length stack <> 0 && index < String.length str && oppositeClose (List.head stack) str.[index]) then
+            recTest (List.tail stack) str (index + 1)
+        else if (index < String.length str) then
+            recTest (str.[index]::stack) str (index + 1)  
         else (List.length stack) = 0          
-    recTest stack str
+    recTest stack str 0
             
-printfn "%A" (test "(({}[]){})")
+printfn "%A" (test "(({}[]){})")    
 
   
