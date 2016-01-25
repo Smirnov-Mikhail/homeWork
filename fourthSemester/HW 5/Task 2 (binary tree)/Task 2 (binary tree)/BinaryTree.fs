@@ -45,7 +45,7 @@ type Tree<'a when 'a : comparison>() =
                         node.SetRight value
                     else
                         recAdd next.Value
-                else
+                else if not(this.isExists(value)) then
                     let next = node.getLeft
                     if next = None then
                         node.SetLeft value
@@ -79,6 +79,7 @@ tree.add 5
 tree.add 20
 tree.add 17
 tree.add 16
+tree.add 18
 tree.add 18
 printfn "%A" <| tree.isExists 5
 printfn "%A" <| tree.isExists 15
